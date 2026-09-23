@@ -17,6 +17,23 @@
 | 脚本 | 用途 |
 |---|---|
 | `push_to_github_api.py` | **把本 skill 仓库推到 GitHub**（走 REST API，绕开被阻断的 `github.com` 传输通道）。见下方说明。 |
+| `package_for_market.py` | **打包市场提交包**：按 WorkBuddy 开放平台规范收敛目录（只留 SKILL.md + references/ + scripts/ + templates/）、校验 frontmatter 必填字段与密钥、控体积 ≤3MB。 |
+| `gen_market_icon.py` | 生成 512×512 市场图标（Pillow，极简深色风，与出图色板同源）。 |
+
+### 发布到 WorkBuddy 技能市场
+
+```bash
+PY="C:/Users/suge0/.workbuddy/binaries/python/envs/default/Scripts/python.exe"
+"$PY" tools/package_for_market.py -o "<输出>.zip"      # 校验 + 打包
+"$PY" tools/gen_market_icon.py  -o "<输出>-icon.png"   # 图标
+```
+
+上传入口：**WorkBuddy 开放平台 `https://open.workbuddy.cn/`** → 发布新技能
+（首次需完成入驻/认证）。表单文案与上传清单见工作区 `技能市场提交材料.md`。
+
+⚠️ 打包脚本会自动**排除**：`.env` 与一切键值形式的密钥、浏览器 profile、账号 ID、
+`examples/`、`agents/`、`LICENSE`、`README.md`。命中密钥模式时**直接中止打包**，
+宁可误报也不把凭证发出去。
 
 ### 什么时候需要 push_to_github_api.py
 

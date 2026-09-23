@@ -2,7 +2,13 @@
 name: ai-news-social-pipeline
 description: 把每日 AI 新闻转成微信公众号深度稿 + 抖音长图文的完整可执行流水线（选题评分 → 事实核查 → 排版 → 出图 → 自动发草稿/发布 → 合规审查）。当用户需要从当天 AI 动态里挑出争议性最强的一条，产出可直接发布的抖音口播稿/分镜表/长图文正文和公众号文章（Markdown + 微信兼容 HTML + 封面），或需要做热点选题评分、自媒体合规审查、每日定时内容生产时使用。触发词：AI日报转内容、新闻做抖音、新闻写公众号、自媒体流水线、热点选题、争议性选题、每日内容生产、AI新闻二次创作、把这条新闻做成视频、自动发草稿、自动发抖音、定时推文。
 agent_created: true
+display_name: 每日 AI 新闻转公众号 / 抖音内容流水线
+display_name_en: Daily AI News to WeChat & Douyin Pipeline
+description_zh: 从每日 AI 新闻里挑出争议性最强的一条，产出公众号深度稿与抖音长图文，并自动推草稿箱 / 发布；含六维选题评分、回源事实核查、Pillow 出图与合规审查。
+description_en: Turn daily AI news into a WeChat deep-dive article and a Douyin long-form post — six-dimension topic scoring, source-verified fact-checking, Pillow-generated visuals, and one-command publishing to the WeChat draft box / Douyin.
+category: writing
 version: 2.0.0
+author: 陈博皓（89757-creater）
 ---
 
 # AI 新闻 → 公众号 / 抖音 内容流水线
